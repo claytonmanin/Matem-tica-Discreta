@@ -1,0 +1,67 @@
+Conjuntos
+Disciplina: Matemática Discreta
+Professor:  Jackson Gomes de Souza
+Aluno : Clayton Porto Chaves
+
+
+Resumo
+
+  Biblioteca é um fragmento um conjunto de funções de código que tem uma funcionalidade completa como um programa. Elas servem para poupar tempo na execução do software, e facilitar a reutilização de código pelos programadores. Este trabalho tem por objetivo apresentar o resultado de estudos realizados a respeito de conjuntos matemáticos, com a finalidade totalmente acadêmica, ao qual foi desenvolvido com base, em aulas, e em pesquisas na internet que é uma fonte muito rica em informações. 
+
+
+1.	Introdução
+ 	Nesta etapa do trabalho será mostrado passo a passo o que foi realizado para o desenvolvimento da biblioteca, todos os aplicativos usados e as linguagens de programação usadas para o desenvolvimento da aplicação.
+Conjuntos
+Os conjuntos são um dos pilares principais da Matemática. Aqui, vamos aprender um pouco mais sobre alguns deles com: Pertinência, Continência, igualdade, União e plano cartesiano.
+
+Pertinência:
+ É a característica associada a um elemento que faz parte de um conjunto, exemplo.
+a.	José da Silva pertence ao conjunto dos brasileiros.
+b.	Pertence ao conjunto dos números naturais.
+c.	1   N, O numero 1 pertence ao conjunto N
+d.	0   N, O numero 0 não pertence ao conjunto N
+
+Continência
+	A relação de continência é bastante parecida com a de pertinência. A diferença se dá no fato de se tratar de uma relação conjunto - conjunto, e não elemento - conjunto. Isto quer dizer que, quando os elementos de um conjunto A fazem, todos eles, parte de um outro conjunto B, dizemos que A está contido em B, ou A c B.
+Exemplo: 
+A{1,2,3} c B{1,2,3,4} = A pertence ao conjunto B pois todos seus elementos estão contidos em B.
+A{1,2,3} ¢ B{1,4,5,6} = A não pertence ao conjunto B pois apenas um de seus elementos esta contido em B.
+
+Igualdade
+	A relação de igualdade é bem simples, pois todos os conjunto comparados tem que ser iguais tanto em quantidade de elementos quanto na igualdade dos próprios elementos contidos no conjunto.
+Exemplo:
+O Conjunto M={1,2} e o conjunto N={1,1,1,2,2,2,2}, M = N
+ Observe que os dois conjuntos possuem apenas dois elementos cada um, e são exatamente iguais. A quantidade de vezes que um elemento aparece no conjunto não é levada em consideração. O símbolo quando não há igualdade é 
+
+União
+	Como o próprio nome diz união é a junção de todos os conjuntos tornando um só.
+A={a,b,c}       B={c,d,j}  =  {a,b,c,d,j} 
+A= {4, 5, 6}    B= {4, 5, 6, 7, 8} = B 
+A= {8, 9}   B=   = {8, 9} 
+Plano Cartesiano
+Um par ordenado é formado pelos valores de x e y agrupados, os quais determinam pontos no plano cartesiano. A coordenada (x, y) indica que os valores de x estão atribuídos à abscissa (eixo x) e os valores de y à ordenada (eixo y). Produto cartesiano é a multiplicação entre pares ordenados envolvendo conjuntos distintos. Por exemplo, temos o conjunto “A” formado pelos seguintes pares ordenados {1, 2, 3, 4} e o conjunto “B” formado pelos elementos {2, 3}, o produto entre eles será o resultado de A x B, considerando que nos pares ordenados, formados pelo produto, a ordem seja a seguinte: 
+
+Os elementos de A devem assumir a posição da abscissa, e os elementos de B da ordenada. 
+
+Portanto, temos que 
+A x B =  {(1, 2); (2, 2); (3, 2); (4, 2); (1, 3); (2, 3); 3, 3); (4, 3)} 
+
+Também podemos realizar o produto de B x A e verificar que os pares formados são diferentes, concluindo que A x B ≠ B x A. Observe: 
+B x A  = {(2, 1); (2, 2); (2, 3); (2, 4); (3, 1); (3, 2); (3, 3); (3, 4)} 
+
+Desenvolvimento da biblioteca
+	A biblioteca foi desenvolvida com o objetivo acadêmico para aperfeiçoamento dos conhecimentos repassados na sala de aula, e com o objetivo de aplicar as regras dos conjuntos citados acima na programação. Para o desenvolvimento pratico foi utilizado à linguagem Java, pois é uma linguagem orientada a objetos, e que disponibiliza muitos recursos, O IDE utilizado foi NetBeans 7.3.
+
+Referencias 
+<http://www.brasilescola.com/matematica/plano-cartesiano.htm>
+Acessado em 16 de abril de 2013-04-21
+
+<http://pessoal.sercomtel.com.br/matematica/medio/conjuntos/conjunto.htm>
+Acessado em 16 de abril de 2013-04-21
+
+http://www.andremachado.org/artigos/77/conjuntos-subconjuntos-pertinencia-e-continencia.html
+Acessado em 16 de abril de 2013-04-21
+
+http://www.brasilescola.com/matematica/plano-cartesiano.htm
+Acessado em 16 de abril de 2013-04-21
+
