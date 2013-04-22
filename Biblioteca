@@ -1,0 +1,252 @@
+
+//CLASSE CONJUNTO A
+package matdiscreta;
+
+public class ConjA {
+   private int ConjA;
+
+    public int getConjA() {
+        return ConjA;
+    }
+
+    public void setConjA(int ConjA) {
+        this.ConjA = ConjA;
+    }
+
+    @Override
+    public String toString() {
+        return "" +ConjA;
+    }
+    
+    }
+
+
+//CLASSE CONJUNTO B
+
+package matdiscreta;
+
+public class ConjB {
+   private int ConjB;
+
+    public int getConjB() {
+        return ConjB;
+    }
+
+    public void setConjB(int ConjB) {
+        this.ConjB = ConjB;
+    }
+
+    @Override
+    public String toString() {
+        return ""+ConjB;
+    }
+
+
+
+
+//PROGRAMA PRINCIPAL
+******************************************************************************************************
+package matdiscreta;
+
+import javax.swing.JOptionPane;
+import java.util.ArrayList;
+
+public class MatDiscreta {
+     public static   ArrayList<ConjA> ConjuntoA = new ArrayList<ConjA>();
+     public static   ArrayList<ConjB> ConjuntoB = new ArrayList<ConjB>();
+
+       
+    public static void main(String[] args) {
+        
+       /**Para facilitar os testes, alguns pacotes foram cadastrados 
+            * diretamente no código. 
+        */
+      InsereNoCodigo();
+        
+        
+        
+        
+        int op;
+        
+       do{
+           op = Integer.parseInt(JOptionPane.showInputDialog("Escolha a opção desejada"
+                                                             + "\n1 - Pertinencia"
+                                                             + "\n2 - Continencia"
+                                                             + "\n3 - Igualdade"
+                                                             + "\n4 - União"   
+                                                             + "\n5 - Plano Cartesiano"
+                                                             + "\n6 - Cardinalidade"
+                                                             + "\n7 - Sair"));
+            switch (op)
+            {
+                case 1:
+                    Pertinencia(ConjuntoA);
+                    break;
+                case 2:
+                    Continencia(ConjuntoA, ConjuntoB);
+                    break;
+                case 3:
+                    Igualdade(ConjuntoA, ConjuntoB);
+                    break;
+                case 4:
+                   Uniao(ConjuntoA, ConjuntoB);
+                    break;
+                case 5:
+                   planoCartesiano(ConjuntoA, ConjuntoB);
+                    break;
+            }
+            
+       }while(op !=0);   
+        
+    }
+    
+    public static void InsereNoCodigo(){
+        ConjA a = new ConjA();        
+        a.setConjA(1);
+        ConjuntoA.add(a);
+                
+        ConjA a1 = new ConjA();        
+        a1.setConjA(2);
+        ConjuntoA.add(a1);
+        
+        ConjA a2 = new ConjA();        
+        a2.setConjA(3);
+        ConjuntoA.add(a2);
+        
+        //inserindo no conjunto B
+        ConjB b = new ConjB();        
+        b.setConjB(1);
+        ConjuntoB.add(b);
+                
+        ConjB b1 = new ConjB();        
+        b1.setConjB(2);
+        ConjuntoB.add(b1);
+        
+        ConjB b2 = new ConjB();        
+        b2.setConjB(3);
+        ConjuntoB.add(b2); 
+        
+      /* ConjB b3 = new ConjB();        
+        b3.setConjB(10);
+        ConjuntoB.add(b3); */
+        
+      }
+    
+    public static void Pertinencia(ArrayList<ConjA> ConjuntoA){
+    
+        int valor = Integer.parseInt(JOptionPane.showInputDialog("Forneça o valor a ser verificado"));
+        int cont=0;
+        for(int i=0; i<ConjuntoA.size(); i++){
+            if (ConjuntoA.isEmpty())
+            {
+            System.out.println("\n\nNão há valores Inseridos");
+            }
+            else{
+            if(valor == ConjuntoA.get(i).getConjA())
+            {
+                cont = cont+1;
+            }
+         }           
+      }
+        if(cont !=0)
+             System.out.println("valor pertence ao conjunto");
+        else
+             System.out.println("valor não pertence ao conjunto");
+    }
+    
+    public static void Continencia(ArrayList<ConjA> ConjuntoA, ArrayList<ConjB> ConjuntoB)
+    {
+        int junta;
+        int cont=0;
+        
+        
+        for(int i=0; i<ConjuntoA.size(); i++)
+        {
+            for(int j=0; j<ConjuntoB.size(); j++)
+            {
+                if(ConjuntoA.get(i).getConjA() == ConjuntoB.get(j).getConjB())
+                {
+                  junta = ConjuntoB.get(j).getConjB();
+                  cont = cont+1;
+                }               
+            }      
+        }
+        if(cont == ConjuntoA.size())
+            System.out.println("Conjunto 'A' pertence ao Conjunto 'B'");
+        else
+            System.out.println("Conjunto 'A' não pertence ao Conjunto 'B'");      
+    }    
+
+
+    public static void Igualdade(ArrayList<ConjA> ConjuntA, ArrayList<ConjB> ConjuntoB)
+    {
+        int cont= ConjuntoA.size() ;
+        int[] vet = new int[cont];
+        int calc=0;
+        
+            
+        if(ConjuntoA.size() == ConjuntoB.size() && calc == 0)
+        {
+            for(int i=0; i<ConjuntoA.size(); i++)
+          {
+            for(int j=0; j<ConjuntoB.size(); j++)
+            {
+                if(ConjuntoA.get(i).getConjA() == ConjuntoB.get(j).getConjB())
+                {
+                  vet[j] = ConjuntoB.get(j).getConjB();
+                }else{
+                 calc = calc + 1;
+                 }
+            }      
+          }
+            for(int i=0; i<ConjuntoA.size(); i++)
+            {
+            if(vet[i] == ConjuntoA.get(i).getConjA())
+            System.out.println("Conjunto 'A' e igual ao conjunto 'B'");
+            }
+            
+       }
+        else
+            System.out.println("conjunto 'A' não é igual conjunto 'B' pois seus tamanhos são diferentes"); 
+    }    
+    
+    
+    public static void Uniao(ArrayList<ConjA> ConjuntA, ArrayList<ConjB> ConjuntoB)
+    {
+        System.out.println("Conjuntos unidos"+ConjuntoA.toString() + ConjuntoB.toString());
+    
+    }
+    
+    public static void planoCartesiano (ArrayList<ConjA> ConjuntA, ArrayList<ConjB> ConjuntoB)
+    {
+        
+        for(int i=0; i<ConjuntoA.size(); i++)
+        {   
+            System.out.println(""+ConjuntoA.get(i).getConjA());
+            for(int j=0; j<ConjuntoB.size(); j++)
+            {
+                System.out.println(""+ConjuntoB.get(j).getConjB());
+            }
+        }
+    }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
