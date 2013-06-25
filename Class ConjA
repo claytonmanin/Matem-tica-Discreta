@@ -1,0 +1,25 @@
+Matem-tica-Discreta
+===================
+
+
+
+//CLASSE CONJUNTO A
+package matdiscreta;
+
+public class ConjA {
+   private int ConjA;
+
+    public int getConjA() {
+        return ConjA;
+    }
+
+    public void setConjA(int ConjA) {
+        this.ConjA = ConjA;
+    }
+
+    @Override
+    public String toString() {
+        return "" +ConjA;
+    }
+    
+    }
