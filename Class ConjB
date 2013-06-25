@@ -1,0 +1,25 @@
+Matem-tica-Discreta
+===================
+
+API C/ InsereSort
+
+//CLASSE CONJUNTO B
+
+package matdiscreta;
+
+public class ConjB {
+   private int ConjB;
+
+    public int getConjB() {
+        return ConjB;
+    }
+
+    public void setConjB(int ConjB) {
+        this.ConjB = ConjB;
+    }
+
+    @Override
+    public String toString() {
+        return ""+ConjB;
+    }
+
