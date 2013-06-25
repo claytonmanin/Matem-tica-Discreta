@@ -5,7 +5,7 @@ package matdiscreta;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
-public class MatDiscreta {
+public class Matdiscreta {
      public static   ArrayList<ConjA> ConjuntoA = new ArrayList<ConjA>();
      public static   ArrayList<ConjB> ConjuntoB = new ArrayList<ConjB>();
 
@@ -15,7 +15,7 @@ public class MatDiscreta {
        /**Para facilitar os testes, alguns pacotes foram cadastrados 
             * diretamente no código. 
         */
-        InsereNoCodigo();
+     // InsereNoCodigo();
         
         int op;
         
@@ -29,7 +29,8 @@ public class MatDiscreta {
                                                              + "\n6 - Cardinalidade"
                                                              + "\n7 - Interseção"
                                                              + "\n8 - Diferenca"
-                                                             + "\n9 - Sair"));
+                                                             + "\n9 - Insert Sort"
+                                                             + "\n10 - Sair"));
             switch (op)
             {
                 case 1:
@@ -56,7 +57,9 @@ public class MatDiscreta {
                 case 8:
                     diferenca(ConjuntoA, ConjuntoB);
                     break;
-                  
+                case 9:
+                    insertionSort(ConjuntoA);
+                break;
             }
             
        }while(op !=0);   
@@ -69,7 +72,7 @@ public class MatDiscreta {
         ConjuntoA.add(a);
                 
         ConjA a1 = new ConjA();        
-        a1.setConjA(2);
+        a1.setConjA(4);
         ConjuntoA.add(a1);
         
         ConjA a2 = new ConjA();        
@@ -233,10 +236,68 @@ public class MatDiscreta {
                   valor = ConjuntoA.get(i).getConjA();
     
             }
-          
-
-     }
+       }
     }
+    
+    
+    
+    
+    
+    public static void insertionSort(ArrayList<ConjA> ConjuntoA)
+{
+  
+   int i,  valorAtual;
+    
+   int op = Integer.parseInt(JOptionPane.showInputDialog("1 - crescente\n 2 - Decrescente"));
+
+   if(op == 1)
+   {
+      for(int x =0; x<4; x++)
+      { 
+         ConjA c = new ConjA(); 
+         c.setConjA(Integer.parseInt(JOptionPane.showInputDialog("valor")));
+         ConjuntoA.add(c);
+      }
+ 
+   for(int j=1; j < ConjuntoA.size(); j++ ) 
+   {
+      valorAtual = ConjuntoA.get(j).getConjA();
+      i = j-1;
+      
+      while(i >= 0 && ConjuntoA.get(i).getConjA() > valorAtual)
+      {
+        ConjuntoA.get(i+1).setConjA(ConjuntoA.get(i).getConjA());
+        i--;
+      }              
+      ConjuntoA.get(i+1).setConjA(valorAtual);
+   }
+   System.out.println(""+ConjuntoA.toString());
+   }
+    
+   if(op == 2)
+     {
+        for(int x =0; x<3; x++)
+        { 
+            ConjA c = new ConjA();    
+            c.setConjA(Integer.parseInt(JOptionPane.showInputDialog("valor")));
+            ConjuntoA.add(c);
+        }
+   
+        for(int j=1; j<ConjuntoA.size(); j++ ) 
+        {
+           valorAtual = ConjuntoA.get(j).getConjA();
+           i = j-1;
+
+           while(i >= 0 && ConjuntoA.get(i).getConjA() < valorAtual)
+           {
+             ConjuntoA.get(i+1).setConjA(ConjuntoA.get(i).getConjA());
+             i--;
+           }              
+           ConjuntoA.get(i+1).setConjA(valorAtual);
+        }
+        System.out.println(""+ConjuntoA.toString());
+     }
+   }
 }
 
 
